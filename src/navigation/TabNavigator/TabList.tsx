@@ -9,7 +9,7 @@ const TABS = [
     component: HomeTab,
     options: {
       title: 'home',
-      iconName: 'homeLogo',
+      iconName: 'home',
       showLabel: true,
       headerShown: false,
     },
@@ -19,7 +19,7 @@ const TABS = [
     component: ProfileTab,
     options: {
       title: 'profile',
-      iconName: 'profileLogo',
+      iconName: 'person',
       showLabel: true,
       headerShown: false,
     },
@@ -29,7 +29,7 @@ const TABS = [
     component: MemberTabs,
     options: {
       title: 'member',
-      iconName: 'memberLogo',
+      iconName: 'people',
       showLabel: true,
       headerShown: false,
     },
