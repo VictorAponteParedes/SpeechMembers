@@ -18,8 +18,8 @@ const TABS = [
     name: Routes.PROFILE,
     component: ProfileTab,
     options: {
-      title: 'profile',
-      iconName: 'person',
+      title: 'Discursantes',
+      iconName: 'mic',
       showLabel: true,
       headerShown: false,
     },
