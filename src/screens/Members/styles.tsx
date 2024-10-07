@@ -35,6 +35,59 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginLeft: 5,
   },
+  modalContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0,0,0,0.5)', // Fondo oscuro con transparencia
+  },
+  modalContent: {
+    backgroundColor: 'white',
+    padding: 20,
+    borderRadius: 10,
+    width: '95%',
+    alignItems: 'center',
+  },
+  modalTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 10,
+  },
+  label: {
+    textAlign: 'center',
+    fontWeight: '500',
+    fontSize: 17,
+    marginBottom: 5,
+    color: theme.black,
+  },
+  input: {
+    borderWidth: 1,
+    borderColor: '#ccc',
+    color: theme.black,
+    padding: 10,
+    marginBottom: 20,
+    width: '100%',
+    borderRadius: 5,
+  },
+  loadButton: {
+    backgroundColor: theme.greenList.primary,
+    padding: 15,
+    borderRadius: 5,
+    width: '100%',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  cancelButton: {
+    backgroundColor: '#ff6363',
+    padding: 15,
+    borderRadius: 5,
+    width: '100%',
+    alignItems: 'center',
+  },
+  buttonText: {
+    color: 'white',
+    fontWeight: 'bold',
+  },
 });
 
 export default styles;

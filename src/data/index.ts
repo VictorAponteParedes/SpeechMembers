@@ -14,7 +14,7 @@ const namesData = [
   { id: 13, name: 'Alejandro Herrera', age: 34, email: 'alejandro.herrera@mail.com', phone: '555-5678', city: 'La Paz', registrationDate: '2022-08-01', calling: 'Presidente de Quórum de Élderes' },
   { id: 14, name: 'Lucía Castillo', age: 22, email: 'lucia.castillo@mail.com', phone: '555-9101', city: 'San Juan', registrationDate: '2023-05-12', calling: 'Líder de Actividades' },
   { id: 15, name: 'Lorena Jara', age: 37, email: 'gabriel.ruiz@mail.com', phone: '555-1123', city: 'San José', registrationDate: '2023-06-19', calling: 'Consejero de Sociedad de Socorro' },
-  { id: 15, name: 'Victor Aponte', age: 27, email: 'vaponte520@gmail.com', phone: '0983 567 890', city: 'Lambare', registrationDate: '2023-07-19', calling: 'Segundo Consejero del Obispado' },
+  { id: 16, name: 'Victor Aponte', age: 27, email: 'vaponte520@gmail.com', phone: '0983 567 890', city: 'Lambare', registrationDate: '2023-07-19', calling: 'Segundo Consejero del Obispado' },
 ];
 
 export default namesData;

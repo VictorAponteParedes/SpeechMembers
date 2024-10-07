@@ -8,3 +8,7 @@ export type nameType = {
     registrationDate: string;
     calling: string;
 }
+
+export type nameMemberChage ={
+    name: string
+}

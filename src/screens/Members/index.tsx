@@ -1,5 +1,13 @@
-import React from 'react';
-import {Text, View, FlatList, StyleSheet, TouchableOpacity} from 'react-native';
+import React, {useState} from 'react';
+import {
+  Text,
+  View,
+  FlatList,
+  TouchableOpacity,
+  Modal,
+  TextInput,
+  Button,
+} from 'react-native';
 import namesData from '../../data';
 import CardMembesList from '../../components/CardMemberList';
 import theme from '../../theme';
@@ -8,17 +16,34 @@ import Routes from '../../navigation/routes';
 import {nameType} from '../../types';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import styles from './styles';
+import {nameMemberChage} from '../../types';
 
 const MemberScreen = () => {
   const navigation = useNavigation();
+  const [modalVisible, setModalVisible] = useState(false);
+  const [newName, setNewName] = useState('');
+
   const handleAddPress = () => {
-    console.log('Agrega miembro');
-    // navigation.navigate(Routes.ADD_MEMBER);
+    setModalVisible(true);
+  };
+
+  const handleCancel = () => {
+    setModalVisible(false);
+    setNewName('');
+  };
+
+  const handleLoad = () => {
+    if (newName) {
+      console.log('Cargando miembro:', newName);
+      setModalVisible(false);
+      setNewName('');
+    }
   };
 
   const handlePress = (item: nameType) => {
     navigation.navigate(Routes.DETAIL_MEMBER, {item});
   };
+
   return (
     <View style={styles.container}>
       <View
@@ -37,13 +62,40 @@ const MemberScreen = () => {
 
       <FlatList
         data={namesData}
-        keyExtractor={item => item.id.toString()}
+        keyExtractor={(item, index) => `${item.id}-${index}`}
         renderItem={({item}) => (
           <TouchableOpacity onPress={() => handlePress(item)}>
             <CardMembesList name={item.name} />
           </TouchableOpacity>
         )}
       />
+
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => setModalVisible(false)}>
+        <View style={styles.modalContainer}>
+          <View style={styles.modalContent}>
+            <Text style={styles.modalTitle}>Agregar nuevo miembro</Text>
+            <Text style={styles.label}>Nombre del miembro</Text>
+            <TextInput
+              placeholder="Nombre"
+              value={newName}
+              onChangeText={setNewName}
+              style={styles.input}
+            />
+            <TouchableOpacity style={styles.loadButton} onPress={handleLoad}>
+              <Text style={styles.buttonText}>Cargar</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.cancelButton}
+              onPress={handleCancel}>
+              <Text style={styles.buttonText}>Cancelar</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
     </View>
   );
 };
