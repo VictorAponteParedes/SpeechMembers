@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     backgroundColor: theme.white,
   },
   title: {
-    fontSize: 20,
+    fontSize: 17,
     fontWeight: 'bold',
     marginBottom: 16,
     color: 'black',
@@ -20,6 +20,20 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#ccc',
     color: 'black',
+  },
+  addButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: theme.greenList.primary,
+    paddingVertical: 8,
+    paddingHorizontal: 10,
+    borderRadius: 10,
+    marginBottom: 11,
+  },
+  addText: {
+    color: theme.white,
+    fontSize: 16,
+    marginLeft: 5,
   },
 });
 
